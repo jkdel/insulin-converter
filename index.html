@@ -1,0 +1,170 @@
+---
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Equine Insulin Converter</title>
+  <meta name="description" content="A simple WebApp to convert and compare insulin measurements between assays.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="//fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/style.min.css"> -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<a class="invisible" href="http://www.tiho-hannover.de/pferde">
+<header>
+  <table>
+    <tr>
+      <td class="logo-container">
+        <div class="logo"></div>
+      </td>
+      <td>
+        University of Veterinary Medicine Hannover, Foundation<br>
+        <span class="blue">Clinic for Horses</span>
+      </td>
+    </tr>
+  </table>
+</header>
+</a>
+<div class="banner">
+</div>
+<section class="intro">
+  <h1>Equine Insulin Converter</h1>
+  <h2>Background</h2>
+  <details>
+  <summary>
+    In equine medicine, measuring insulin and accurately interpreting the results is most important
+    when dealing with the <strong>equine metabolic syndrome</strong> (<strong>EMS</strong>) or
+    <strong>pituitary pars intermedia dysfunction</strong> (<strong>PPID</strong>), formerly known
+    as <strong>equine cushing syndrome</strong>. The increased risk for laminitis associated with
+    these diseases is mediated by <strong>insulin dysregulation</strong> (<strong>ID</strong>), which encompasses
+    basal and post-prandial <strong>hyperinsulinemia</strong> as well as <strong>insulin resistance</strong>.
+  </summary>
+  <p>
+    The assays available to measure equine insulin vary widely in their biochemical properties (type of assay,
+    sensitivity and specifity, robustness against matrix effects or dilution, range of quantification, etc.),
+    and could never be compared to a common gold standard using a large scale standardized approach for lack of
+    recombinant equine insulin or sufficiently large sets of publicly available pooled samples. Still, very
+    different assays were used to determine the reference ranges for horses or cut-offs for the wealth of published
+    diagnostic tests.
+  </p>
+  <p>    
+    To enable the comparison between samples and cut-offs determined using any combination of assays for which we
+    had sufficient data, we built this publicly available WebApp. The methodology for determining the non-linear
+    conversion functions is described in detail in a paper to be published soon. Briefly, a polynomial function of
+    degree 1 to 10 was estimated using cross-validation and data from samples in which insulin was measured using
+    two or more assays.
+  </p>
+  <p>
+    The combinations of assays for which the conversion is currently possible is presented in figure 1.
+  </p>
+  <p>
+    To use the App enter the insulin concentration in µIU/mL measured using any of the available assays and click "convert".
+    The App will then provide the predicted insulin concentration for any other assay, as far as
+    possible based on our data. These values are provided without any warrantie as mere approximations. Please note
+    that decisions for treatment should always consider the specific clinical case and not be based solely on
+    laboratory values - even less after a conversion carrying additional uncertainty.
+  </p>
+  </details>
+</section>
+<section class="insulin">
+  <h2>Convert insulin measurements</h2>
+  <div id="wrap">
+    <div id="cwid">
+      <table id="wid">
+      <tbody>
+      <tr>
+      <td>ADVIA Centaur</td><td><input id="advia" oninput="validateNumber(this);"> µIU/mL</td>
+      </tr>
+      <tr>
+      <td>Beckman Coulter </td><td><input id="beckman" oninput="validateNumber(this);"> µIU/mL</td>
+      </tr>
+      <tr>
+      <td>Cornell RIA </td><td><input id="cornell" oninput="validateNumber(this);"> µIU/mL</td>
+      </tr>
+      <tr>
+      <td>Mercodia ELISA </td><td><input id="mercodia" oninput="validateNumber(this);"> µIU/mL</td>
+      </tr>
+      <tr>
+      <td>Immulite 1000 </td><td><input id="immulite1000" oninput="validateNumber(this);"> µIU/mL</td>
+      </tr>
+      <tr>
+      <td colspan="2"><button id="convert" type="button" onclick="conv()">Convert!</button></td>
+      </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<section class="more">
+  <h2>More information</h2>
+  <p>
+    Have a plot with known reference range/cut-offs (y) from consensus and the different assays (x).
+
+    <strong>Insulin dysregulation</strong> is a central part of the
+    <strong>Equine Metabolic Syndrome</strong> and can be detected using OGT.
+    However, it might also occur in horses affected by <strong>Pars Pituitary
+    Intermedia Deficiency</strong> (<strong>PPID</strong>), formerly known as
+    <strong>Equine Cushing Syndrome</strong>. This is why horses that where
+    found positive in the OGT and could possibly be affected by PPID (age, other
+    clinical signs) should also be tested (e.g. by <strong>TRH stimulation
+    test</strong>), and if necessary treated, for this disease.
+  </p>
+  <p>
+    The management of patients with EMS mostly consists in an
+    <strong>optimization of the diet and exercise</strong>. Energy intake has to
+    be reduced gradually and adapted to the horse's actual needs, which are
+    sometimes difficult to evaluate for the owner. Exercising of the horse is
+    not limited to a more intense training but also includes changes in the
+    stables like access to a paddock, more space for social interaction or
+    putting obstacles in the paddock to make the route from roughage to water
+    circuitous etc. More specific advices and suggestions can be found in
+    literature.
+  </p>
+  <h3 id="suggested">Suggested reading:</h3>
+  <ul>
+    <li>
+      <a href="http://dx.doi.org/10.1111/eve.12130">Frank N, Geor R. Current
+      best practice in clinical management of equine endocrine patients.
+      Equine Veterinary Education 2013;26:6–9. doi:10.1111/eve.12130.</a>
+    </li>
+    <li>
+      <a href="http://dx.doi.org/10.1111/evj.12169">Frank N, Tadros EM.
+      Insulin dysregulation. Equine Veterinary Journal 2013;46:103–12.
+      doi:10.1111/evj.12169.</a>
+    </li>
+    <li>
+      <a href="http://dx.doi.org/10.1111/evj.12445">Morgan RA, Keen JA,
+      McGowan CM. Treatment of equine metabolic syndrome: A clinical case
+      series. Equine Veterinary Journal 2015;48:422–6.
+      doi:10.1111/evj.12445.</a>
+    </li>
+  </ul>
+  <p id="paper">
+    For more details about the protocol recommended for use with this reference
+    values and the dataset used to suggest these references please read
+    following paper that was the starting point for writing this webapp:<br>
+    <a href="http://dx.doi.org/10.1186/s13028-018-0358-8">Warnken T, Delarocque
+    J, Schumacher S, Huber K, Feige K. Retrospective analysis of insulin
+    responses to standard dosed oral glucose tests (OGTs) via naso-gastric
+    tubing towards definition of an objective cut-off value. Acta Veterinaria
+    Scandinavica 2018;60. doi:10.1186/s13028-018-0358-8.</a>
+  </p>
+  <p>
+    The webapp was written by Julien Delarocque. It is provided without any warranty.
+    Hosting is provided by <a href="https://www.github.com">GitHub</a>.
+  </p>
+</section>
+<script>
+{% include script.js %}</script>
+<!--[if lt IE 9]><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+<script type="text/javascript" src="js/details-shim.min.js"></script>
+</body>
+</html>
