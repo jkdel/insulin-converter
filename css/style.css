@@ -12,18 +12,18 @@ body,h1,h2 {
 }
 
 h1 {
-    margin: 20px 8% 40px;
+    margin: 20px 0 40px;
     color: #fff;
     font-size: 40pt;
     line-height: 1.2
 }
 
 h2 {
-    margin: 0 8% 30px
+    margin: 0 0 30px
 }
 
 section {
-    padding: 40px 0
+    padding: 40px 8%;
 }
 
 details.details_shim_closed, details.details_shim_open {
@@ -55,14 +55,6 @@ details.details_shim_open > summary:after, details[open] > summary:after {
 
 details.details_shim_open > summary:after, details[open] > summary:after {
   content: " [Click for less details]";
-}
-
-h3, ul, p, details {
-    margin: 0 8%
-}
-
-details > p {
-    margin: 0
 }
 
 p+p, p+details, details+p, summary+p, p+h3, h3+p, ul+p, p+ul, h3+ul {
@@ -153,15 +145,24 @@ header table {
     background: #cfecff
 }
 
-#wrap {
-//  text-align: center;
-    margin: 0 8%
+.outer {
+  width: 100%;
 }
 
-#cwid {
-  text-align: left;
-//  min-width: 350px;
+.inner {
   display: inline-block;
+  vertical-align: top;
+}
+
+.converter {
+  min-width: 350px;
+  width: 26%;
+  height: 275px;
+}
+
+.assays {
+  min-width: 350px;
+  width: 73%;
 }
 
 #wid {
@@ -183,11 +184,9 @@ input {
     font-size: 12px;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0,0,0,.1);
-//    width: 200px;
     width: 100%;
     cursor: pointer;
     margin: 10px 0;
-//    margin-left: 10px;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -240,19 +239,11 @@ input {
     }
 
     h1,h2 {
-        margin: 0 3% 20px
-    }
-
-    h3, ul, p, details {
-        margin: 0 3%
-    }
-
-    details > p {
-        margin: 0
+        margin: 0 0 20px
     }
 
     section {
-        padding: 25px 0
+        padding: 25px 3%
     }
 
     body {
@@ -293,19 +284,11 @@ input {
     }
 
     h1,h2 {
-        margin: 0 3% 20px
-    }
-
-    h3, ul, p, details {
-        margin: 0 3%
-    }
-
-    details > p {
-        margin: 0
+        margin: 0 0 20px
     }
 
     section {
-        padding: 25px 0
+        padding: 25px 3%
     }
 
     body {

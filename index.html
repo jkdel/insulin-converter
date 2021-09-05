@@ -75,32 +75,41 @@
   </details>
 </section>
 <section class="insulin">
-  <h2>Convert insulin measurements</h2>
-  <div id="wrap">
-    <div id="cwid">
-      <table id="wid">
-      <tbody>
-      <tr>
-      <td>ADVIA Centaur</td><td><input id="advia" oninput="validateNumber(this);"> µIU/mL</td>
-      </tr>
-      <tr>
-      <td>Beckman Coulter </td><td><input id="beckman" oninput="validateNumber(this);"> µIU/mL</td>
-      </tr>
-      <tr>
-      <td>Cornell RIA </td><td><input id="cornell" oninput="validateNumber(this);"> µIU/mL</td>
-      </tr>
-      <tr>
-      <td>Mercodia ELISA </td><td><input id="mercodia" oninput="validateNumber(this);"> µIU/mL</td>
-      </tr>
-      <tr>
-      <td>Immulite 1000 </td><td><input id="immulite1000" oninput="validateNumber(this);"> µIU/mL</td>
-      </tr>
-      <tr>
-      <td colspan="2"><button id="convert" type="button" onclick="conv()">Convert!</button></td>
-      </tr>
-      </tbody>
-      </table>
-    </div>
+  <div class="outer">
+  <div class="inner converter">
+    <h2>Convert insulin measurements</h2>
+    <table id="wid">
+    <tbody>
+    <tr>
+    <td>ADVIA Centaur</td><td><input id="advia" oninput="validateNumber(this);"> µIU/mL</td>
+    </tr>
+    <tr>
+    <td>Beckman Coulter </td><td><input id="beckman" oninput="validateNumber(this);"> µIU/mL</td>
+    </tr>
+    <tr>
+    <td>Cornell RIA </td><td><input id="cornell" oninput="validateNumber(this);"> µIU/mL</td>
+    </tr>
+    <tr>
+    <td>Mercodia ELISA </td><td><input id="mercodia" oninput="validateNumber(this);"> µIU/mL</td>
+    </tr>
+    <tr>
+    <td>Immulite 1000 </td><td><input id="immulite1000" oninput="validateNumber(this);"> µIU/mL</td>
+    </tr>
+    <tr>
+    <td colspan="2"><button id="convert" type="button" onclick="conv()">Convert!</button></td>
+    </tr>
+    </tbody>
+    </table>
+  </div>
+  <div class="inner assays">
+    <h2>Assay details</h2>
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non felis convallis, consequat nunc et, auctor ex. Nulla suscipit eu odio in venenatis. Nam tincidunt orci vel diam molestie condimentum. Maecenas elementum nisi tortor, in euismod augue ornare eget. Ut viverra vestibulum pellentesque. Nulla facilisis, eros eget consequat laoreet, libero odio convallis ligula, nec faucibus nunc quam tincidunt libero. Pellentesque semper augue non lorem interdum, nec rutrum velit dictum. Aenean id tellus vitae nunc aliquam viverra ac imperdiet risus. Phasellus tempor, ipsum ut tincidunt aliquam, eros erat vestibulum nunc, in varius justo mi non ipsum. Nulla id leo metus. Duis et maximus sem. Integer eleifend condimentum ornare. Maecenas sit amet neque enim. Pellentesque eget dapibus lorem. Integer libero lectus, mattis at turpis quis, condimentum rutrum lorem. Etiam a sapien commodo odio luctus aliquam.
+    </p>
+    <p>
+    Sed in efficitur purus. Morbi facilisis odio est, egestas fringilla erat venenatis vel. Nulla quam nisl, gravida eleifend sodales et, aliquet quis justo. Pellentesque a lectus suscipit, laoreet dui et, tincidunt tellus. Pellentesque a nulla quis dolor tempor congue. Vestibulum sagittis, lacus et consequat fermentum, lacus lacus laoreet nisi, in semper odio ante eget odio. Nunc vitae magna quam. Duis lacinia a mi vitae dictum. Maecenas a nulla sed lorem lobortis consequat. Sed eu rutrum risus, sit amet pharetra risus. Aenean at venenatis dolor. Morbi eleifend imperdiet nulla.
+    </p>
+  </div>
   </div>
 </section>
 <section class="more">
