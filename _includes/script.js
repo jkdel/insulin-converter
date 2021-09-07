@@ -32,6 +32,13 @@ function validateNumber(elem) {
     }
 }
 
+var rmText = new RegExp(/N\/A|Out of range|< LOQ/);
+function removeText(elem) {
+    if (rmText.test(elem.value)) {
+        elem.value = "";
+    }
+}
+
 var convfuns = {
     "advia": {
         "beckman": function (x) {return null},

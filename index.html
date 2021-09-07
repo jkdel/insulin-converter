@@ -35,140 +35,197 @@
 </a>
 <div class="banner">
 </div>
-<section class="intro">
+<section class="intro" style="overflow: hidden">
   <h1>Equine Insulin Converter</h1>
   <h2>Background</h2>
   <details>
   <summary>
-    In equine medicine, measuring insulin and accurately interpreting the results is most important
-    when dealing with the <strong>equine metabolic syndrome</strong> (<strong>EMS</strong>) or
-    <strong>pituitary pars intermedia dysfunction</strong> (<strong>PPID</strong>), formerly known
-    as <strong>equine cushing syndrome</strong>. The increased risk for laminitis associated with
-    these diseases is mediated by <strong>insulin dysregulation</strong> (<strong>ID</strong>), which encompasses
-    basal and post-prandial <strong>hyperinsulinemia</strong> as well as <strong>insulin resistance</strong>.
+    The two major equine endocrinopathies <strong>pituitary <i>pars
+    intermedia</i> dysfunction</strong> (PPID) and the <strong>equine metabolic
+    syndrome</strong> (EMS) are closely associated with insulin. Therefore,
+    measuring insulin is essential for diagnosing these diseases and preventing
+    <strong>laminitis</strong>, their most severe clinical consequence. However,
+    <strong>many of the available assays measuring insulin provide disparate
+    results</strong>, hindering the comparison between measurements and,
+    crucially, with reference ranges and cut-offs obtained using other assays.
   </summary>
+  <figure style="margin: 1%; float: right; max-width: 98%; line-height:1.4">
+    <img src="images/assay_pairs.png" alt="Pairs of assays for which a comparison is possible." style="width: 400px; max-width: 100%; margin: 8px">
+    <figcaption><b>Fig. 1 &mdash; Pairs of assays for which a comparison is possible.</b></figcaption>
+  </figure>
   <p>
-    The assays available to measure equine insulin vary widely in their biochemical properties (type of assay,
-    sensitivity and specifity, robustness against matrix effects or dilution, range of quantification, etc.),
-    and could never be compared to a common gold standard using a large scale standardized approach for lack of
-    recombinant equine insulin or sufficiently large sets of publicly available pooled samples. Still, very
-    different assays were used to determine the reference ranges for horses or cut-offs for the wealth of published
-    diagnostic tests.
+    This web app encapsulates the relationship between many pairs of assays our
+    lab came to compare with each other over the years. An
+    <strong>assay-specific insulin measurement</strong> can be converted to an
+    <strong>approximate value</strong> of what would have been obtained with 
+    other assays using polynomials. We currently provide conversion for the
+    assay pairs presented in <b>figure 1</b>, but we will try to increase the
+    number of available comparisons in the following months.
   </p>
   <p>    
-    To enable the comparison between samples and cut-offs determined using any combination of assays for which we
-    had sufficient data, we built this publicly available WebApp. The methodology for determining the non-linear
-    conversion functions is described in detail in a paper to be published soon. Briefly, a polynomial function of
-    degree 1 to 10 was estimated using cross-validation and data from samples in which insulin was measured using
-    two or more assays.
+    To use the app enter an insulin measurement obtained with one of the
+    available assays (in µIU/mL) and press enter or click the
+    &lsquo;convert&rsquo;.
   </p>
   <p>
-    The combinations of assays for which the conversion is currently possible is presented in figure 1.
-  </p>
-  <p>
-    To use the App enter the insulin concentration in µIU/mL measured using any of the available assays and click "convert".
-    The App will then provide the predicted insulin concentration for any other assay, as far as
-    possible based on our data. These values are provided without any warrantie as mere approximations. Please note
-    that decisions for treatment should always consider the specific clinical case and not be based solely on
-    laboratory values - even less after a conversion carrying additional uncertainty.
+    Please bear in mind that the conversion adds additional uncertainty to the
+    measurement and that every medical decision should take the clinical
+    circumstances into account.
   </p>
   </details>
 </section>
-<section class="insulin">
-  <div class="outer">
-  <div class="inner converter">
+<section class="insulin" style="overflow: hidden">
+  <!--<div class="outer">-->
+  <div class="inner converter" style="float: left; width: 370px; height: 275px">
     <h2>Convert insulin measurements</h2>
     <table id="wid">
     <tbody>
     <tr>
-    <td>ADVIA Centaur</td><td><input id="advia" oninput="validateNumber(this);"> µIU/mL</td>
+    <td>ADVIA Centaur</td><td><input id="advia" onfocus="removeText(this);" oninput="validateNumber(this);"> µIU/mL</td>
     </tr>
     <tr>
-    <td>Beckman Coulter </td><td><input id="beckman" oninput="validateNumber(this);"> µIU/mL</td>
+    <td>Beckman Coulter</td><td><input id="beckman" onfocus="removeText(this);" oninput="validateNumber(this);"> µIU/mL</td>
     </tr>
     <tr>
-    <td>Cornell RIA </td><td><input id="cornell" oninput="validateNumber(this);"> µIU/mL</td>
+    <td>Immulite 1000</td><td><input id="immulite1000" onfocus="removeText(this);" oninput="validateNumber(this);"> µIU/mL</td>
     </tr>
     <tr>
-    <td>Mercodia ELISA </td><td><input id="mercodia" oninput="validateNumber(this);"> µIU/mL</td>
+    <td>Mercodia</td><td><input id="mercodia" onfocus="removeText(this);" oninput="validateNumber(this);"> µIU/mL</td>
     </tr>
     <tr>
-    <td>Immulite 1000 </td><td><input id="immulite1000" oninput="validateNumber(this);"> µIU/mL</td>
+    <td>Millipore</td><td><input id="cornell" onfocus="removeText(this);" oninput="validateNumber(this);"> µIU/mL</td>
     </tr>
     <tr>
-    <td colspan="2"><button id="convert" type="button" onclick="conv()">Convert!</button></td>
+    <td colspan="2"><button id="convert" type="button" onfocus="removeText(this);" onclick="conv()">Convert!</button></td>
     </tr>
     </tbody>
     </table>
   </div>
-  <div class="inner assays">
+  <div class="inner assays" style="overflow: hidden; min-width: 300px">
     <h2>Assay details</h2>
-    <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non felis convallis, consequat nunc et, auctor ex. Nulla suscipit eu odio in venenatis. Nam tincidunt orci vel diam molestie condimentum. Maecenas elementum nisi tortor, in euismod augue ornare eget. Ut viverra vestibulum pellentesque. Nulla facilisis, eros eget consequat laoreet, libero odio convallis ligula, nec faucibus nunc quam tincidunt libero. Pellentesque semper augue non lorem interdum, nec rutrum velit dictum. Aenean id tellus vitae nunc aliquam viverra ac imperdiet risus. Phasellus tempor, ipsum ut tincidunt aliquam, eros erat vestibulum nunc, in varius justo mi non ipsum. Nulla id leo metus. Duis et maximus sem. Integer eleifend condimentum ornare. Maecenas sit amet neque enim. Pellentesque eget dapibus lorem. Integer libero lectus, mattis at turpis quis, condimentum rutrum lorem. Etiam a sapien commodo odio luctus aliquam.
-    </p>
-    <p>
-    Sed in efficitur purus. Morbi facilisis odio est, egestas fringilla erat venenatis vel. Nulla quam nisl, gravida eleifend sodales et, aliquet quis justo. Pellentesque a lectus suscipit, laoreet dui et, tincidunt tellus. Pellentesque a nulla quis dolor tempor congue. Vestibulum sagittis, lacus et consequat fermentum, lacus lacus laoreet nisi, in semper odio ante eget odio. Nunc vitae magna quam. Duis lacinia a mi vitae dictum. Maecenas a nulla sed lorem lobortis consequat. Sed eu rutrum risus, sit amet pharetra risus. Aenean at venenatis dolor. Morbi eleifend imperdiet nulla.
-    </p>
+    <ul>
+      <li>
+        <strong>ADVIA Centaur:</strong> ADVIA Centaur Insulin Assay, Siemens Healthcare Diagnostics GmbH, Eschborn, Germany
+      </li>
+      <li>
+        <strong>Beckman Coulter:</strong> Insulin IRMA KIT, Immunotech, Beckman Coulter, Porterville, CA, USA
+      </li>
+      <li>
+        <strong>Immulite 1000:</strong> Immulite 1000 Insulin Assay, Siemens Healthcare, Malvern, PA, USA
+      </li>
+      <li>
+        <strong>Mercodia:</strong> Equine Insulin ELISA, Mercodia AB, Uppsala, Sweden
+      </li>
+      <li>
+        <strong>Millipore:</strong> Porcine Insulin RIA, Millipore, St. Charles, MO, USA
+      </li>
+    </ul>
   </div>
-  </div>
+  <!--</div>-->
 </section>
 <section class="more">
+  <!-- <div style="display: block, margin: 0; overflow: hidden;"> -->
   <h2>More information</h2>
-  <p>
-    Have a plot with known reference range/cut-offs (y) from consensus and the different assays (x).
-
-    <strong>Insulin dysregulation</strong> is a central part of the
-    <strong>Equine Metabolic Syndrome</strong> and can be detected using OGT.
-    However, it might also occur in horses affected by <strong>Pars Pituitary
-    Intermedia Deficiency</strong> (<strong>PPID</strong>), formerly known as
-    <strong>Equine Cushing Syndrome</strong>. This is why horses that where
-    found positive in the OGT and could possibly be affected by PPID (age, other
-    clinical signs) should also be tested (e.g. by <strong>TRH stimulation
-    test</strong>), and if necessary treated, for this disease.
-  </p>
-  <p>
-    The management of patients with EMS mostly consists in an
-    <strong>optimization of the diet and exercise</strong>. Energy intake has to
-    be reduced gradually and adapted to the horse's actual needs, which are
-    sometimes difficult to evaluate for the owner. Exercising of the horse is
-    not limited to a more intense training but also includes changes in the
-    stables like access to a paddock, more space for social interaction or
-    putting obstacles in the paddock to make the route from roughage to water
-    circuitous etc. More specific advices and suggestions can be found in
-    literature.
-  </p>
-  <h3 id="suggested">Suggested reading:</h3>
-  <ul>
-    <li>
-      <a href="http://dx.doi.org/10.1111/eve.12130">Frank N, Geor R. Current
-      best practice in clinical management of equine endocrine patients.
-      Equine Veterinary Education 2013;26:6–9. doi:10.1111/eve.12130.</a>
-    </li>
-    <li>
-      <a href="http://dx.doi.org/10.1111/evj.12169">Frank N, Tadros EM.
-      Insulin dysregulation. Equine Veterinary Journal 2013;46:103–12.
-      doi:10.1111/evj.12169.</a>
-    </li>
-    <li>
-      <a href="http://dx.doi.org/10.1111/evj.12445">Morgan RA, Keen JA,
-      McGowan CM. Treatment of equine metabolic syndrome: A clinical case
-      series. Equine Veterinary Journal 2015;48:422–6.
-      doi:10.1111/evj.12445.</a>
-    </li>
-  </ul>
-  <p id="paper">
-    For more details about the protocol recommended for use with this reference
-    values and the dataset used to suggest these references please read
-    following paper that was the starting point for writing this webapp:<br>
-    <a href="http://dx.doi.org/10.1186/s13028-018-0358-8">Warnken T, Delarocque
+    <a class="invisible" href="https://www.ogt-reference-provider.org/">
+    <table id="orp-teaser">
+    <tr>
+      <td class="teaser-container"></td>
+      <td class="teaser-text">
+        Discover our other app, the <strong>OGT Reference Provider</strong> with a dynamic
+        reference range (90 to 180 min) for the oral glucose test, providing a more practicable test for
+        insulin dysregulation!
+      </td>
+    </tr>
+  </table>
+  </a>
+  <figure style="margin: 1%; float: right; max-width: 98%; line-height:1.4">
+    <img src="images/conv_comp_plot.png" alt="Comparison of different published cut-offs across assays." style="width: 800px; max-width: 100%; margin: 8px">
+    <figcaption style="width: 800px; max-width: 100%; margin-bottom: 5px"><b>Fig. 2 &mdash; Comparison of different published cut-offs across assays.</b><br><br>
+    1. <a href="https://sites.tufts.edu/equineendogroup/">Equine Endocrinology Group, <i>Recommendations for the Diagnosis and Treatment of Equine Metabolic Syndrome (EMS)</i>, 2016, accessed November 2017.</a><br>
+    2. <a href="https://sites.tufts.edu/equineendogroup/">Equine Endocrinology Group, <i>Recommendations for the Diagnosis and Treatment of Equine Metabolic Syndrome (EMS)</i>, 2020, accessed August 2021.</a><br>
+    3. <a href="http://dx.doi.org/10.1186/s13028-018-0358-8">Warnken T, Delarocque
     J, Schumacher S, Huber K, Feige K. Retrospective analysis of insulin
     responses to standard dosed oral glucose tests (OGTs) via naso-gastric
     tubing towards definition of an objective cut-off value. Acta Veterinaria
-    Scandinavica 2018;60. doi:10.1186/s13028-018-0358-8.</a>
+    Scandinavica 2018;60. doi:10.1186/s13028-018-0358-8.</a><br>
+    4. <a href="http://dx.doi.org/10.1016/j.domaniend.2017.10.008">Meier AD, de Laat MA, Reiche DB, Pollitt CC, Walsh DM, McGree JM, et al. The oral glucose test predicts laminitis risk in ponies fed a diet high in nonstructural carbohydrates. Domestic Animal Endocrinology 2018;63:1–9. doi:10.1016/j.domaniend.2017.10.008.</a>
+    </figcaption>
+  </figure>
+  <p>
+    As demonstrated in <b>figure 2</b>, insulin cut-offs are not applicable
+    as-is independently of the assay used, warranting the use of
+    <strong>assay-specific reference ranges</strong> or, in their absence,
+    approximate solutions such as our conversion app.
   </p>
   <p>
-    The webapp was written by Julien Delarocque. It is provided without any warranty.
-    Hosting is provided by <a href="https://www.github.com">GitHub</a>.
+    It is also interesting to note that the lines connecting the converted
+    values to the original cut-offs cross at some point, indicating that
+    <strong>the conversion of insulin measurements is not merely proportional to an
+    assay-specific coefficient</strong>. The interaction between assays and
+    insulin ought to be investigated using recombinant equine insulin or
+    standardised pooled samples available to all laboratories.
+  </p>
+  <p>
+    <strong>A paper describing the exact methodology to obtain the conversion
+    functions is underway</strong>. Briefly, a polynomial function of degree 1
+    to 2 was estimated using cross-validation and data from samples in which
+    insulin was measured using two or more assays. Each function was visually
+    inspected to preclude overfitting.
+  </p>
+  <h3 id="suggested">Suggested readings:</h3>
+  <ul>
+    <li>  
+      <a href="http://dx.doi.org/10.1111/jvim.15423">Durham AE, Frank N, McGowan
+      CM, Menzies‐Gow NJ, Roelfsema E, Vervuert I, et al. ECEIM consensus
+      statement on equine metabolic syndrome. J Vet Intern Med 2019;33:335–49.
+      doi:10.1111/jvim.15423.</a>
+    </li>
+    <li>
+      <a href="http://dx.doi.org/10.1016/j.domaniend.2011.05.001">Tinworth KD,
+      Wynn PC, Boston RC, Harris PA, Sillence MN, Thevis M, et al. Evaluation of
+      commercially available assays for the measurement of equine insulin.
+      Domestic Animal Endocrinology 2011;41:81–90.
+      doi:10.1016/j.domaniend.2011.05.001.</a>
+    </li>
+    <li>
+      <a href="http://dx.doi.org/10.1007/s00580-011-1284-6">Öberg J, Bröjer J,
+      Wattle O, Lilliehöök I. Evaluation of an equine-optimized enzyme-linked
+      immunosorbent assay for serum insulin measurement and stability study of
+      equine serum insulin. Comp Clin Pathol 2011;21:1291–300.
+      doi:10.1007/s00580-011-1284-6.</a>
+    </li>
+    <li>
+      <a href="http://dx.doi.org/10.2460/ajvr.73.10.1596">Borer-Weir KE, Bailey
+      SR, Menzies-Gow NJ, Harris PA, Elliott J. Evaluation of a commercially
+      available radioimmunoassay and species-specific ELISAs for measurement of
+      high concentrations of insulin in equine serum. American Journal of
+      Veterinary Research 2012;73:1596–602.
+      doi:10.2460/ajvr.73.10.1596.</a>
+    </li>
+    <li>
+      <a href="http://dx.doi.org/10.1177/1040638714536560">Banse HE, McCann J,
+      Yang F, Wagg C, McFarlane D. Comparison of two methods for measurement of
+      equine insulin. J VET Diagn Invest 2014;26:527–30.
+      doi:10.1177/1040638714536560.</a>
+    </li>
+    <li>
+      <a href="http://dx.doi.org/10.1186/s12917-016-0828-z">Warnken T, Huber K,
+      Feige K. Comparison of three different methods for the quantification of
+      equine insulin. BMC Vet Res 2016;12.
+      doi:10.1186/s12917-016-0828-z.</a>
+    </li>
+    <li>
+      <a href="http://dx.doi.org/10.1111/jvim.14657">Carslake HB, Pinchbeck GL,
+      McGowan CM. Evaluation of a Chemiluminescent Immunoassay for Measurement
+      of Equine Insulin. J Vet Intern Med 2017;31:568–74.
+      doi:10.1111/jvim.14657.</a>
+    </li>
+  </ul>
+  <!-- </div> -->
+  <p>
+    <a href="https://www.researchgate.net/profile/Julien_Delarocque">Julien
+    Delarocque</a> wrote this web app using data provided by
+    <a href="https://www.researchgate.net/profile/Tobias-Warnken">Tobias Warnken</a>.
   </p>
 </section>
 <script>

@@ -50,14 +50,17 @@ details.details_shim_closed > summary:after, details > summary:after,
 details.details_shim_open > summary:after, details[open] > summary:after {
   content: " [Click for more details]";
   font-weight: 700;
-  /*font-family: monospace*/
 }
 
 details.details_shim_open > summary:after, details[open] > summary:after {
   content: " [Click for less details]";
 }
 
-p+p, p+details, details+p, summary+p, p+h3, h3+p, ul+p, p+ul, h3+ul {
+h3, ul, p, details {
+    margin: 0
+}
+
+p+p, p+details, details+p, summary+p, p+h3, h3+p, ul+p, p+ul, h3+ul, figure+p {
     padding-top: 20px
 }
 
@@ -67,9 +70,12 @@ p+p, p+details, details+p, summary+p, p+h3, h3+p, ul+p, p+ul, h3+ul {
 
 a {
     color: inherit;
-    text-decoration-style: dashed;
-    text-decoration-line: underline;
+    text-decoration: underline dashed 1px;
     font-weight: 700
+}
+
+figcaption a {
+  font-weight: inherit;
 }
 
 .invisible {
@@ -118,6 +124,29 @@ header table {
     padding: 0 0 100%
 }
 
+#orp-teaser {
+    margin-bottom: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    border-collapse: collapse;
+    overflow: hidden;
+    width: 100%
+}
+
+.teaser-text {
+    padding: 8px 8px 8px 20px;
+}
+
+.teaser-container {
+    width: 8%;
+    min-width: 100px;
+    height: 100px;
+    background-image: url(../images/orp_banner.jpg);
+    background-size: cover;
+    background-position-y: center;
+    background-position-x: 25%;
+}
+
 .blue {
     color: #006ab3
 }
@@ -143,26 +172,6 @@ header table {
 
 .more {
     background: #cfecff
-}
-
-.outer {
-  width: 100%;
-}
-
-.inner {
-  display: inline-block;
-  vertical-align: top;
-}
-
-.converter {
-  min-width: 350px;
-  width: 26%;
-  height: 275px;
-}
-
-.assays {
-  min-width: 350px;
-  width: 73%;
 }
 
 #wid {
