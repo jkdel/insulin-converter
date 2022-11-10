@@ -79,7 +79,7 @@
   <div id="converter">
   <h2>Converter</h2>
     <ul>
-    {% for assay in site.data.assays %}
+    {% for assay in site.data.models %}
       <li>
         <span class="assay_sn">{{ assay.shortname }}</span>
         <span class="conv_input">
@@ -96,7 +96,7 @@
   <div class="assays">
     <h2>Assay details</h2>
     <ul>
-    {% for assay in site.data.assays %}
+    {% for assay in site.data.models %}
       <li>
         <strong>{{ assay.shortname }}:</strong> {{ assay.name }}, {{ assay.manufacturer }}
       </li>

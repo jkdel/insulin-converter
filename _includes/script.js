@@ -9,7 +9,7 @@ for (var i = 0; i < el.length; i++) {
 
 var validNumber = new RegExp(/^\d*(\.|,)?\d*$/);
 var lastValid = {
-  {% for assay in site.data.assays %}
+  {% for assay in site.data.models %}
     "{{ assay.id }}": document.getElementById("{{ assay.id }}").value,
   {% endfor %}
 };
@@ -18,7 +18,7 @@ var lastActive = "";
 function validateNumber(elem) {
     if (validNumber.test(elem.value)) {
         lastValid[elem.id] = elem.value;
-      {% for assay in site.data.assays %}
+      {% for assay in site.data.models %}
         document.getElementById("{{ assay.id }}").style.color = "#999";
       {% endfor %}
         document.getElementById(elem.id).style.color = "#000";
@@ -37,7 +37,7 @@ function removeText(elem) {
 }
 
 var convfuns = {
-  {% for assay in site.data.assays %}
+  {% for assay in site.data.models %}
     "{{ assay.id }}": {
       {% for formula in assay.formulae %}
         "{{ formula.target }}": function (x) {return {{ formula.pred }}},
@@ -47,7 +47,7 @@ var convfuns = {
 };
 
 var convranges = {
-  {% for assay in site.data.assays %}
+  {% for assay in site.data.models %}
     "{{ assay.id }}": {
       {% for formula in assay.formulae %}
         "{{ formula.target }}": [1, {{ formula.max }}],
