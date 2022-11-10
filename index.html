@@ -76,56 +76,35 @@
   </details>
 </section>
 <section class="insulin" style="overflow: hidden">
-  <!--<div class="outer">-->
-  <div class="inner converter" style="float: left; width: 370px; height: 275px">
-    <h2>Convert insulin measurements</h2>
-    <table id="wid">
-    <tbody>
-    <tr>
-    <td>ADVIA Centaur</td><td><input id="advia" onfocus="removeText(this);" oninput="validateNumber(this);"> µIU/mL</td>
-    </tr>
-    <tr>
-    <td>Beckman Coulter</td><td><input id="beckman" onfocus="removeText(this);" oninput="validateNumber(this);"> µIU/mL</td>
-    </tr>
-    <tr>
-    <td>Immulite 1000</td><td><input id="immulite1000" onfocus="removeText(this);" oninput="validateNumber(this);"> µIU/mL</td>
-    </tr>
-    <tr>
-    <td>Mercodia</td><td><input id="mercodia" onfocus="removeText(this);" oninput="validateNumber(this);"> µIU/mL</td>
-    </tr>
-    <tr>
-    <td>Millipore</td><td><input id="cornell" onfocus="removeText(this);" oninput="validateNumber(this);"> µIU/mL</td>
-    </tr>
-    <tr>
-    <td colspan="2"><button id="convert" type="button" onfocus="removeText(this);" onclick="conv()">Convert!</button></td>
-    </tr>
-    </tbody>
-    </table>
-  </div>
-  <div class="inner assays" style="overflow: hidden; min-width: 300px">
-    <h2>Assay details</h2>
+  <div id="converter">
+  <h2>Converter</h2>
     <ul>
+    {% for assay in site.data.assays %}
       <li>
-        <strong>ADVIA Centaur:</strong> ADVIA Centaur Insulin Assay, Siemens Healthcare Diagnostics GmbH, Eschborn, Germany
+        <span class="assay_sn">{{ assay.shortname }}</span>
+        <span class="conv_input">
+          <input id="{{ assay.id }}" onfocus="removeText(this);" oninput="validateNumber(this);"> µIU/mL
+        </span>
+        <span class="assay_range">[1 &mdash; {{ assay.range }} µIU/mL]</span>
       </li>
+    {% endfor %}
       <li>
-        <strong>Beckman Coulter:</strong> Insulin IRMA KIT, Immunotech, Beckman Coulter, Porterville, CA, USA
-      </li>
-      <li>
-        <strong>Immulite 1000:</strong> Immulite 1000 Insulin Assay, Siemens Healthcare, Malvern, PA, USA
-      </li>
-      <li>
-        <strong>Mercodia:</strong> Equine Insulin ELISA, Mercodia AB, Uppsala, Sweden
-      </li>
-      <li>
-        <strong>Millipore:</strong> Porcine Insulin RIA, Millipore, St. Charles, MO, USA
+        <button id="convert" type="button" onfocus="removeText(this);" onclick="conv()">Convert!</button>
       </li>
     </ul>
   </div>
-  <!--</div>-->
+  <div class="assays">
+    <h2>Assay details</h2>
+    <ul>
+    {% for assay in site.data.assays %}
+      <li>
+        <strong>{{ assay.shortname }}:</strong> {{ assay.name }}, {{ assay.manufacturer }}
+      </li>
+    {% endfor %}
+    </ul>
+  </div>
 </section>
 <section class="more">
-  <!-- <div style="display: block, margin: 0; overflow: hidden;"> -->
   <h2>More information</h2>
     <a class="invisible" href="https://www.ogt-reference-provider.org/">
     <table id="orp-teaser">
@@ -139,7 +118,13 @@
     </tr>
   </table>
   </a>
-  <figure style="margin: 1%; float: right; max-width: 98%; line-height:1.4">
+  <p>
+    As demonstrated in <b>figure 2</b>, insulin cut-offs are not applicable
+    as-is independently of the assay used, warranting the use of
+    <strong>assay-specific reference ranges</strong> or, in their absence,
+    approximate solutions such as our conversion app.
+  </p>
+  <figure id="fig2">
     <img src="images/conv_comp_plot.png" alt="Comparison of different published cut-offs across assays." style="width: 800px; max-width: 100%; margin: 8px">
     <figcaption style="width: 800px; max-width: 100%; margin-bottom: 5px"><b>Fig. 2 &mdash; Comparison of different published cut-offs across assays.</b><br><br>
     1. <a href="https://sites.tufts.edu/equineendogroup/">Equine Endocrinology Group, <i>Recommendations for the Diagnosis and Treatment of Equine Metabolic Syndrome (EMS)</i>, 2016, accessed November 2017.</a><br>
@@ -152,12 +137,6 @@
     4. <a href="http://dx.doi.org/10.1016/j.domaniend.2017.10.008">Meier AD, de Laat MA, Reiche DB, Pollitt CC, Walsh DM, McGree JM, et al. The oral glucose test predicts laminitis risk in ponies fed a diet high in nonstructural carbohydrates. Domestic Animal Endocrinology 2018;63:1–9. doi:10.1016/j.domaniend.2017.10.008.</a>
     </figcaption>
   </figure>
-  <p>
-    As demonstrated in <b>figure 2</b>, insulin cut-offs are not applicable
-    as-is independently of the assay used, warranting the use of
-    <strong>assay-specific reference ranges</strong> or, in their absence,
-    approximate solutions such as our conversion app.
-  </p>
   <p>
     It is also interesting to note that the lines connecting the converted
     values to the original cut-offs cross at some point, indicating that
@@ -222,7 +201,6 @@
       doi:10.1111/jvim.14657.</a>
     </li>
   </ul>
-  <!-- </div> -->
   <p>
     <a href="https://www.researchgate.net/profile/Julien_Delarocque">Julien
     Delarocque</a> wrote this web app using data provided by

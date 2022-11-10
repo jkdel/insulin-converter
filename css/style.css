@@ -174,16 +174,26 @@ header table {
     background: #cfecff
 }
 
-#wid {
-  line-height: 1.8;
-}
-
 input {
     width: 75px;
     text-align: right
 }
 
-.insulin button {
+#converter {
+  float: left;
+  width: 430px;
+  padding-right: 30px
+}
+
+#converter ul {
+  list-style:none;
+  /* line-height: 1.5;*/
+  padding:0
+}
+
+button#convert {
+    width:80%;
+    max-width:340px;
     background: #006bb3;
     color: #fff;
     border-radius: 3px;
@@ -193,9 +203,8 @@ input {
     font-size: 12px;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0,0,0,.1);
-    width: 100%;
     cursor: pointer;
-    margin: 10px 0;
+    margin: 10px auto;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -204,23 +213,60 @@ input {
     user-select: none
 }
 
-.insulin button:active {
-    background: #cfecff;
-    color: #006bb3
-}
-
-.insulin button:active,.insulin button:focus,.insulin button:hover {
+button:active, button:focus, button:hover {
     outline: 0
 }
 
+li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+#converter ul li:last-child {
+  text-align: center;
+}
+
+.assay_sn {
+  display:inline-block;
+  text-align: left;
+  width: 110px
+}
+
+.conv_input {
+  display: inline-block;
+  width: 160px
+}
+
+.assay_range {
+  display:inline-block;
+  width: 140px;
+  color: grey
+}
+
+.assays {
+  overflow: hidden;
+  min-width: 300px
+}
+
+#fig2 {
+  margin: 1%;
+  float: right;
+  max-width: 98%;
+  line-height:1.4
+}
+
 @media (hover: hover) {
-  .insulin button:hover {
+  button#convert:hover {
     background: #cfecff;
     color: #006bb3
   }
 }
 
 @media only screen and (max-width:599px) {
+    .assays {
+      padding-top: 20px;
+      min-width: 100%
+    }
+
     .banner {
         height: 363px
     }
@@ -265,7 +311,12 @@ input {
     }
 }
 
-@media only screen and (min-width:600px) and (max-width:899px) {
+@media only screen and (min-width:600px) and (max-width:899px) {  
+    .assays {
+      padding-top: 20px;
+      min-width: 100%
+    }
+    
     .banner {
         height: 480px
     }
@@ -303,11 +354,6 @@ input {
     body {
         font-size: 15px
     }
-
-    .insulin button {
-        display: block;
-        margin: 20px auto 0
-    }
 }
 
 @media only screen and (min-width:900px) and (max-width:1199px) {
@@ -319,10 +365,9 @@ input {
         background: url(../images/banner_1199.jpg);
         background-position: center
     }
-
-    .insulin button {
-        display: block;
-        margin: 20px auto 0
+    
+    #fig2 {
+      float: initial
     }
 }
 
