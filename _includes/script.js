@@ -46,6 +46,16 @@ var convfuns = {
   {% endfor %}
 };
 
+var hwidfuns = {
+  {% for assay in site.data.models %}
+    "{{ assay.id }}": {
+      {% for formula in assay.formulae %}
+        "{{ formula.target }}": function (x) {return {{ formula.hwid }}},
+      {% endfor %}
+    },
+  {% endfor %}
+};
+
 var convranges = {
   {% for assay in site.data.models %}
     "{{ assay.id }}": {
@@ -59,8 +69,11 @@ var convranges = {
 function conv() {
     var x = parseFloat(document.getElementById(lastActive).value.replace(",", "."));
     var funs = convfuns[lastActive];
+    var wfuns = hwidfuns[lastActive];
+    document.getElementById(lastActive+"_range").textContent = "";
     Object.getOwnPropertyNames(funs).forEach(function (val, idx, array) {
         var nval = funs[val](x);
+        document.getElementById(val+"_range").textContent = "";
         if (nval === null) {
             document.getElementById(val).value = "N/A";
         } else {
@@ -72,6 +85,8 @@ function conv() {
                 } else {
                     document.getElementById(val).value = Math.round(nval);
                     document.getElementById(val).style.color = "green";
+                    var nwid = wfuns[val](x);
+                    document.getElementById(val+"_range").textContent = "["+Math.max(0, Math.round(nval+nwid))+"–"+Math.round(nval-nwid)+" µIU/mL]";
                 }
             }
         }

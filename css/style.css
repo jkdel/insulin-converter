@@ -181,8 +181,9 @@ input {
 
 #converter {
   float: left;
-  width: 430px;
-  padding-right: 30px
+  width: 450px;
+  padding-right: 30px;
+  max-width: 94%
 }
 
 #converter ul {
@@ -228,17 +229,17 @@ li:not(:last-child) {
 .assay_sn {
   display:inline-block;
   text-align: left;
-  width: 110px
+  width: 140px
 }
 
 .conv_input {
   display: inline-block;
-  width: 160px
+  width: 150px
 }
 
 .assay_range {
   display:inline-block;
-  width: 140px;
+  width: 150px;
   color: grey
 }
 
