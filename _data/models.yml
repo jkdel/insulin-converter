@@ -4,103 +4,113 @@
   manufacturer: Siemens Healthcare
   range: 153
   formulae:
-    - target: mercodia
-      n: 77
-      r2adj: 0.84
-      max: 153
-      pred: 2.66362070017206+3.00480266644007*x
-      hwid: -1.99210215400224*Math.sqrt(974.674259817244*(1+(-0.113960576459638)**2+(-0.0863856060637679+x*0.00481169825441994)**2))
+    - target: beckman
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: coatacount
+      pred: 'null'
+      hwid: 'null'
+      max: -1
     - target: immulite1000
       n: 60
       r2adj: 0.93
       max: 82
       pred: -15.223531352354+2.96904093390041*x
       hwid: -2.00171748414524*Math.sqrt(117.95639973459*(1+(-0.129099444873581)**2+(-0.168343734420688+x*0.00942222394145642)**2))
-    - target: beckman
-      pred: "null"
-      hwid: "null"
-      max: -1
-    - target: millipore
-      pred: "null"
-      hwid: "null"
-      max: -1
     - target: immulite2000
-      pred: "null"
-      hwid: "null"
+      pred: 'null'
+      hwid: 'null'
       max: -1
     - target: immulite2000XPi
-      pred: "null"
-      hwid: "null"
+      pred: 'null'
+      hwid: 'null'
       max: -1
-      
+    - target: mercodia
+      n: 77
+      r2adj: 0.85
+      max: 153
+      pred: 11.1190291817286+2.21579083075007*x+0.00646463591209952*x**2
+      hwid: -1.99254349518093*Math.sqrt(925.366624109927*(1+(-0.113960576459638)**2+(-0.0863856060637679+x*0.00481169825441994)**2+(-0.124351781940004+x*0.0116038187810582+x**2*-9.50739395993002e-05)**2))
+    - target: millipore
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+
 - id: beckman
   name: Insulin IRMA KIT
   shortname: Beckman Coulter
   manufacturer: Immunotech, Beckman Coulter
   range: 1098
   formulae:
-    - target: mercodia
-      n: 120
-      r2adj: 0.95
-      max: 1098
-      pred: -4.72916920073475+0.540740658665844*x
-      hwid: -1.98027224927295*Math.sqrt(578.228606780127*(1+(-0.0912870929175277)**2+(-0.0615132384549975+x*0.000462376058605292)**2))
+    - target: advia
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: coatacount
+      pred: 'null'
+      hwid: 'null'
+      max: -1
     - target: immulite1000
       n: 83
       r2adj: 0.78
       max: 1098
       pred: 4.39105317574059+0.166390893009948*x
       hwid: -1.9896863234569*Math.sqrt(387.580680811475*(1+(-0.10976425998969)**2+(-0.0851537004133076+x*0.000497415293977226)**2))
-    - target: advia
-      pred: "null"
-      hwid: "null"
-      max: -1
-    - target: millipore
-      pred: "null"
-      hwid: "null"
-      max: -1
     - target: immulite2000
-      pred: "null"
-      hwid: "null"
+      pred: 'null'
+      hwid: 'null'
       max: -1
     - target: immulite2000XPi
-      pred: "null"
-      hwid: "null"
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: mercodia
+      n: 120
+      r2adj: 0.95
+      max: 1098
+      pred: -4.72916920073475+0.540740658665844*x
+      hwid: -1.98027224927295*Math.sqrt(578.228606780127*(1+(-0.0912870929175277)**2+(-0.0615132384549975+x*0.000462376058605292)**2))
+    - target: millipore
+      pred: 'null'
+      hwid: 'null'
       max: -1
 
-- id: millipore
-  name: Porcine Insulin RIA
-  shortname: Millipore RIA
-  manufacturer: Merck Millipore
-  range: 183
+- id: coatacount
+  name: Coat-A-Count Insulin RIA
+  shortname: Coat-A-Count
+  manufacturer: Siemens Healthcare
+  range: 163
   formulae:
-    - target: mercodia
-      n: 36
-      r2adj: 0.99
-      max: 183
-      pred: -0.210556916367797+0.299876659622239*x+0.018766616674552*x**2
-      hwid: -2.03451529744934*Math.sqrt(269.22608802385*(1+(-0.166666666666667)**2+(0.183512336799926+x*-0.00354620825181289)**2+(-0.26735033441727+x*0.0123547551510433+x**2*-7.61221294682764e-05)**2))
-    - target: immulite1000
-      n: 39
-      r2adj: 0.84
-      max: 183
-      pred: -32.9047722648727+1.55368573112319*x
-      hwid: -2.02619246302911*Math.sqrt(1165.17191783245*(1+(-0.160128153805087)**2+(0.173612102033614+x*-0.0031628947173432)**2))
     - target: advia
-      pred: "null"
-      hwid: "null"
+      pred: 'null'
+      hwid: 'null'
       max: -1
     - target: beckman
-      pred: "null"
-      hwid: "null"
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: immulite1000
+      pred: 'null'
+      hwid: 'null'
       max: -1
     - target: immulite2000
-      pred: "null"
-      hwid: "null"
+      pred: 'null'
+      hwid: 'null'
       max: -1
     - target: immulite2000XPi
-      pred: "null"
-      hwid: "null"
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: mercodia
+      n: 80
+      r2adj: 0.97
+      max: 163
+      pred: 6.12332329651278+1.04360533964208*x
+      hwid: -1.99084706881169*Math.sqrt(26.013624732924*(1+(-0.111803398874989)**2+(-0.0867045223552404+x*0.0042906038378484)**2))
+    - target: millipore
+      pred: 'null'
+      hwid: 'null'
       max: -1
 
 - id: immulite1000
@@ -109,12 +119,6 @@
   manufacturer: Siemens Healthcare
   range: 625
   formulae:
-    - target: mercodia
-      n: 179
-      r2adj: 0.7
-      max: 247
-      pred: 5.88013515395518+2.02806194779519*x
-      hwid: -1.9734572015938*Math.sqrt(3983.06696528058*(1+(-0.0747435092751936)**2+(-0.0573265242263961+x*0.00156582524384744)**2))
     - target: advia
       n: 60
       r2adj: 0.93
@@ -127,22 +131,32 @@
       max: 214
       pred: 16.8987003419349+4.69321440305618*x
       hwid: -1.9896863234569*Math.sqrt(10932.0840860081*(1+(-0.10976425998969)**2+(-0.0868494862927708+x*0.00264173685722138)**2))
-    - target: millipore
-      n: 39
-      r2adj: 0.95
-      max: 402
-      pred: 16.5730895564554+1.03986106232189*x-0.00160901830712233*x**2
-      hwid: -2.02809400098045*Math.sqrt(125.113313555965*(1+(-0.160128153805087)**2+(-0.098213446163425+x*0.00187510985371151)**2+(-0.0941517923064062+x*0.00478528763740932+x**2*-1.55928141660418e-05)**2))
+    - target: coatacount
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: immulite2000
+      pred: 'null'
+      hwid: 'null'
+      max: -1
     - target: immulite2000XPi
       n: 70
       r2adj: 1
       max: 625
       pred: 1.06817726013008+1.52751261012932*x-0.000610382409442838*x**2
       hwid: -1.9960083540253*Math.sqrt(68.4682222803144*(1+(-0.119522860933439)**2+(-0.0778030822456966+x*0.00113882770993011)**2+(-0.0890165805374079+x*0.00263311300034897+x**2*-5.79462159325558e-06)**2))
-    - target: immulite2000
-      pred: "null"
-      hwid: "null"
-      max: -1
+    - target: mercodia
+      n: 179
+      r2adj: 0.7
+      max: 247
+      pred: 5.88013515395518+2.02806194779519*x
+      hwid: -1.9734572015938*Math.sqrt(3983.06696528058*(1+(-0.0747435092751936)**2+(-0.0573265242263961+x*0.00156582524384744)**2))
+    - target: millipore
+      n: 39
+      r2adj: 0.95
+      max: 402
+      pred: 16.5730895564554+1.03986106232189*x-0.00160901830712233*x**2
+      hwid: -2.02809400098045*Math.sqrt(125.113313555965*(1+(-0.160128153805087)**2+(-0.098213446163425+x*0.00187510985371151)**2+(-0.0941517923064062+x*0.00478528763740932+x**2*-1.55928141660418e-05)**2))
 
 - id: immulite2000
   name: Immulite 2000 Insulin Assay (CLIA)
@@ -150,31 +164,35 @@
   manufacturer: Siemens Healthcare
   range: 390
   formulae:
+    - target: advia
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: beckman
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: coatacount
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: immulite1000
+      pred: 'null'
+      hwid: 'null'
+      max: -1
     - target: immulite2000XPi
       n: 39
       r2adj: 1
       max: 390
-      pred: 0.868495736551072+1.6415960112663*x
-      hwid: -2.02619246302911*Math.sqrt(74.466052783638*(1+(-0.160128153805087)**2+(-0.125387865121091+x*0.00201582889218957)**2))
-    - target: advia
-      pred: "null"
-      hwid: "null"
-      max: -1
-    - target: beckman
-      pred: "null"
-      hwid: "null"
+      pred: 4.95161478535399+1.50142353989755*x+0.000455430511407*x**2
+      hwid: -2.02809400098045*Math.sqrt(54.3352738778081*(1+(-0.160128153805087)**2+(-0.125387865121091+x*0.00201582889218957)**2+(-0.144434633591348+x*0.00495840540032118+x**2*-1.61102182559864e-05)**2))
+    - target: mercodia
+      pred: 'null'
+      hwid: 'null'
       max: -1
     - target: millipore
-      pred: "null"
-      hwid: "null"
-      max: -1
-    - target: immulite1000
-      pred: "null"
-      hwid: "null"
-      max: -1
-    - target: mercodia
-      pred: "null"
-      hwid: "null"
+      pred: 'null'
+      hwid: 'null'
       max: -1
 
 - id: immulite2000XPi
@@ -183,6 +201,18 @@
   manufacturer: Siemens Healthcare
   range: 714
   formulae:
+    - target: advia
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: beckman
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: coatacount
+      pred: 'null'
+      hwid: 'null'
+      max: -1
     - target: immulite1000
       n: 70
       r2adj: 1
@@ -195,21 +225,13 @@
       max: 668
       pred: -0.269509718861953+0.606642882513549*x
       hwid: -2.02619246302911*Math.sqrt(27.518525020797*(1+(-0.160128153805087)**2+(-0.126192479597347+x*0.00122542595521507)**2))
-    - target: advia
-      pred: "null"
-      hwid: "null"
-      max: -1
-    - target: beckman
-      pred: "null"
-      hwid: "null"
+    - target: mercodia
+      pred: 'null'
+      hwid: 'null'
       max: -1
     - target: millipore
-      pred: "null"
-      hwid: "null"
-      max: -1
-    - target: mercodia
-      pred: "null"
-      hwid: "null"
+      pred: 'null'
+      hwid: 'null'
       max: -1
 
 - id: mercodia
@@ -230,12 +252,12 @@
       max: 560
       pred: 25.4571418692752+1.38175661094083*x+0.000892608187943434*x**2
       hwid: -1.9804475986834*Math.sqrt(1704.52947653718*(1+(-0.0912870929175277)**2+(-0.0560874127695252+x*0.000834516392174515)**2+(0.0715140927224273+x*-0.00251288423750014+x**2*5.90759410312911e-06)**2))
-    - target: millipore
-      n: 36
+    - target: coatacount
+      n: 80
       r2adj: 0.97
-      max: 654
-      pred: 15.3725651780902+0.464228746562698*x-0.000349059617874027*x**2
-      hwid: -2.03451529744934*Math.sqrt(78.2627125684805*(1+(-0.166666666666667)**2+(0.10923516041666+x*-0.00102073051638843)**2+(-0.118856322763119+x*0.0033120640530071+x**2*-6.18126687729742e-06)**2))
+      max: 172
+      pred: -5.00280803436176+0.926442187757897*x
+      hwid: -1.99084706881169*Math.sqrt(23.093135396709*(1+(-0.111803398874989)**2+(-0.110008913250104+x*0.00404258753330652)**2))
     - target: immulite1000
       n: 179
       r2adj: 0.7
@@ -243,11 +265,56 @@
       pred: 8.79183856863874+0.347177703006351*x
       hwid: -1.9734572015938*Math.sqrt(681.84901424236*(1+(-0.0747435092751936)**2+(-0.0519124783992184+x*0.000647856163460769)**2))
     - target: immulite2000
-      pred: "null"
-      hwid: "null"
+      pred: 'null'
+      hwid: 'null'
       max: -1
     - target: immulite2000XPi
-      pred: "null"
-      hwid: "null"
+      pred: 'null'
+      hwid: 'null'
       max: -1
+    - target: millipore
+      n: 36
+      r2adj: 0.97
+      max: 654
+      pred: 15.3725651780902+0.464228746562698*x-0.000349059617874027*x**2
+      hwid: -2.03451529744934*Math.sqrt(78.2627125684805*(1+(-0.166666666666667)**2+(0.10923516041666+x*-0.00102073051638843)**2+(-0.118856322763119+x*0.0033120640530071+x**2*-6.18126687729742e-06)**2))
+
+- id: millipore
+  name: Porcine Insulin RIA
+  shortname: Millipore RIA
+  manufacturer: Merck Millipore
+  range: 183
+  formulae:
+    - target: advia
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: beckman
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: coatacount
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: immulite1000
+      n: 39
+      r2adj: 0.93
+      max: 183
+      pred: 4.74030482515357-0.177532257115399*x+0.0102907972538058*x**2
+      hwid: -2.02809400098045*Math.sqrt(513.251690184304*(1+(-0.160128153805087)**2+(0.173612102033614+x*-0.0031628947173432)**2+(-0.239849090968839+x*0.0110301556762634+x**2*-6.55660329972837e-05)**2))
+    - target: immulite2000
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: immulite2000XPi
+      pred: 'null'
+      hwid: 'null'
+      max: -1
+    - target: mercodia
+      n: 36
+      r2adj: 0.99
+      max: 183
+      pred: -0.210556916367797+0.299876659622239*x+0.018766616674552*x**2
+      hwid: -2.03451529744934*Math.sqrt(269.22608802385*(1+(-0.166666666666667)**2+(0.183512336799926+x*-0.00354620825181289)**2+(-0.26735033441727+x*0.0123547551510433+x**2*-7.61221294682764e-05)**2))
 
