@@ -66,9 +66,9 @@
     assay pairs presented in <b>figure 1</b>.
   </p>
   <p>    
-    To use the app enter an insulin measurement obtained with one of the
+    To use the app, enter an insulin measurement obtained with one of the
     available assays (in µIU/mL) and press enter or click the
-    &lsquo;convert&rsquo; button.Please bear in mind that the conversion adds
+    &lsquo;convert&rsquo; button. Please bear in mind that the conversion adds
     additional uncertainty to the measurement and that every medical decision
     should take the clinical circumstances into account.
   </p>
@@ -119,7 +119,7 @@
   </a>
   <p>
     As demonstrated in <b>figure 2</b>, insulin cut-offs are not applicable
-    as-is independently of the assay used, warranting the use of
+    as-is, independently of the assay used, warranting the use of
     <strong>assay-specific reference ranges</strong> or, in their absence,
     approximate solutions such as our conversion app.
   </p>
@@ -146,11 +146,13 @@
   </p>
   <p>
     <strong>A paper describing the exact methodology to obtain the conversion
-    functions is underway</strong>. Briefly, a polynomial function of degree 1
-    to 2 was estimated using cross-validation and data from samples in which
-    insulin was measured using two or more assays. Each function was visually
-    inspected to preclude overfitting. The intervals given on the right hand
-    side before any conversion are the ranges for which data is available in
+    functions is underway</strong>. Briefly, monotonically non-decreasing splines
+    were fitted with non-negative least-squares regression to describe the
+    relationship between assay pairs, as derived from samples where insulin was
+    measured with two or more assays concurrently. Each function was visually
+    inspected to preclude overfitting. The obtained functions were transformed to
+    polynomials and embedded in the present app. The intervals given on the right
+    hand side before any conversion are the ranges for which data is available in
     the app. After conversion prediction intervals are given instead. They
     describe the uncertainty around the conversion which depends on the amount
     of available data and concordance of the assay pairs.
