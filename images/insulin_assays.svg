@@ -23,9 +23,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="0.68198804"
-     inkscape:cx="757.34466"
-     inkscape:cy="489.74466"
+     inkscape:zoom="0.75927828"
+     inkscape:cx="833.02791"
+     inkscape:cy="471.50038"
      inkscape:window-width="1920"
      inkscape:window-height="1131"
      inkscape:window-x="0"
@@ -37,7 +37,7 @@
      class="node"
      transform="translate(54.649994,559.49001)"
      style="fill:#ffffff"
-     inkscape:export-filename="insulin_assays5w.png"
+     inkscape:export-filename="insulin_assays.png"
      inkscape:export-xdpi="120"
      inkscape:export-ydpi="120">
     <title
@@ -90,14 +90,6 @@
      id="polygon22"
      transform="translate(54.649994,559.49001)"
      style="fill:#ffffff;stroke:#ffffff" />
-  <text
-     text-anchor="middle"
-     x="293"
-     y="377.42001"
-     font-family="'Open Sans'"
-     font-size="14px"
-     fill="#aaaaaa"
-     id="text24">36 (1)</text>
   <g
      id="node4"
      class="node"
@@ -153,14 +145,6 @@
      id="polygon43"
      transform="translate(54.649994,559.49001)"
      style="fill:#ffffff;stroke:#ffffff" />
-  <text
-     text-anchor="middle"
-     x="442.91"
-     y="525.66998"
-     font-family="'Open Sans'"
-     font-size="14px"
-     fill="#aaaaaa"
-     id="text45">39 (1)</text>
   <path
      fill="none"
      stroke="#000000"
@@ -184,14 +168,6 @@
      id="polygon54"
      transform="translate(54.649994,559.49001)"
      style="fill:#ffffff;stroke:#ffffff" />
-  <text
-     text-anchor="middle"
-     x="235.28999"
-     y="401.96002"
-     font-family="'Open Sans'"
-     font-size="14px"
-     fill="#aaaaaa"
-     id="text56">143 (3)</text>
   <path
      fill="none"
      stroke="#000000"
@@ -215,14 +191,6 @@
      id="polygon65"
      transform="translate(54.649994,559.49001)"
      style="fill:#ffffff;stroke:#ffffff" />
-  <text
-     text-anchor="middle"
-     x="376.06"
-     y="319.23001"
-     font-family="'Open Sans'"
-     font-size="14px"
-     fill="#aaaaaa"
-     id="text67">60 (1)</text>
   <path
      fill="none"
      stroke="#000000"
@@ -246,14 +214,6 @@
      id="polygon76"
      transform="translate(54.649994,559.49001)"
      style="fill:#ffffff;stroke:#ffffff" />
-  <text
-     text-anchor="middle"
-     x="257.91"
-     y="236.58"
-     font-family="'Open Sans'"
-     font-size="14px"
-     fill="#aaaaaa"
-     id="text78">81 (2)</text>
   <g
      id="node5"
      class="node"
@@ -293,14 +253,6 @@
      id="polygon92"
      transform="translate(54.649994,559.49001)"
      style="fill:#ffffff;stroke:#ffffff" />
-  <text
-     text-anchor="middle"
-     x="141.37"
-     y="241.2"
-     font-family="'Open Sans'"
-     font-size="14px"
-     fill="#aaaaaa"
-     id="text94">131 (1)</text>
   <path
      fill="none"
      stroke="#000000"
@@ -324,14 +276,6 @@
      id="polygon103"
      transform="translate(54.649994,559.49001)"
      style="fill:#ffffff;stroke:#ffffff" />
-  <text
-     text-anchor="middle"
-     x="256.07999"
-     y="133.19002"
-     font-family="'Open Sans'"
-     font-size="14px"
-     fill="#aaaaaa"
-     id="text105">21 (1)</text>
   <g
      id="node6"
      class="node"
@@ -387,14 +331,6 @@
      id="polygon124"
      transform="translate(54.649994,559.49001)"
      style="fill:#ffffff;stroke:#ffffff" />
-  <text
-     text-anchor="middle"
-     x="284.22"
-     y="287.47003"
-     font-family="'Open Sans'"
-     font-size="14px"
-     fill="#aaaaaa"
-     id="text126">302 (1)</text>
   <path
      fill="none"
      stroke="#000000"
@@ -418,14 +354,6 @@
      id="polygon135"
      transform="translate(54.649994,559.49001)"
      style="fill:#ffffff;stroke:#ffffff" />
-  <text
-     text-anchor="middle"
-     x="443.04001"
-     y="134.93001"
-     font-family="'Open Sans'"
-     font-size="14px"
-     fill="#aaaaaa"
-     id="text137">70 (1)</text>
   <path
      fill="none"
      stroke="#000000"
@@ -449,14 +377,6 @@
      id="polygon146"
      transform="translate(54.649994,559.49001)"
      style="fill:#ffffff;stroke:#ffffff" />
-  <text
-     text-anchor="middle"
-     x="557.95001"
-     y="251.2"
-     font-family="'Open Sans'"
-     font-size="14px"
-     fill="#aaaaaa"
-     id="text148">39 (1)</text>
   <g
      id="node8"
      class="node"
@@ -496,14 +416,6 @@
      id="polygon162"
      transform="translate(54.649994,559.49001)"
      style="stroke:#ffffff;fill:#ffffff" />
-  <text
-     text-anchor="middle"
-     x="141.37"
-     y="417.45001"
-     font-family="'Open Sans'"
-     font-size="14px"
-     fill="#aaaaaa"
-     id="text164">127 (3)</text>
   <path
      fill="none"
      stroke="#000000"
@@ -527,14 +439,6 @@
      id="polygon173"
      transform="translate(54.649994,559.49001)"
      style="fill:#ffffff;stroke:#ffffff" />
-  <text
-     text-anchor="middle"
-     x="256.07999"
-     y="525.46002"
-     font-family="'Open Sans'"
-     font-size="14px"
-     fill="#aaaaaa"
-     id="text175">496 (1)</text>
   <path
      fill="none"
      stroke="#000000"
@@ -558,12 +462,4 @@
      id="polygon184"
      transform="translate(54.649994,559.49001)"
      style="fill:#ffffff;stroke:#ffffff" />
-  <text
-     text-anchor="middle"
-     x="438.06"
-     y="401.10001"
-     font-family="'Open Sans'"
-     font-size="14px"
-     fill="#aaaaaa"
-     id="text186">16 (1)</text>
 </svg>

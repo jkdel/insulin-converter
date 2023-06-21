@@ -54,7 +54,7 @@
     assay to another.
   </summary>
   <figure style="margin: 1%; float: right; max-width: 98%; line-height:1.4">
-    <img src="images/insulin_assays.png" alt="Pairs of assays for which a comparison is possible." style="width: 500px; max-width: 100%; margin: 8px">
+    <img src="images/insulin_assays.png" alt="Pairs of assays which can currently be compared." style="width: 500px; max-width: 100%; margin: 8px">
     <figcaption><b>Fig. 1 &mdash; Pairs of assays for which a comparison is possible.</b></figcaption>
   </figure>
   <p>
@@ -126,20 +126,27 @@
   <figure id="fig2">
     <img src="images/conv_comp_plot.png" alt="Comparison of different published cut-offs across assays." style="width: 800px; max-width: 100%; margin: 8px">
     <figcaption style="width: 800px; max-width: 100%; margin-bottom: 5px"><b>Fig. 2 &mdash; Comparison of different published cut-offs across assays.</b><br><br>
-    1. <a href="https://sites.tufts.edu/equineendogroup/">Equine Endocrinology Group, <i>Recommendations for the Diagnosis and Treatment of Equine Metabolic Syndrome (EMS)</i>, 2016, accessed November 2017.</a><br>
-    2. <a href="https://sites.tufts.edu/equineendogroup/">Equine Endocrinology Group, <i>Recommendations for the Diagnosis and Treatment of Equine Metabolic Syndrome (EMS)</i>, 2020, accessed August 2021.</a><br>
-    3. <a href="http://dx.doi.org/10.1186/s13028-018-0358-8">Warnken T, Delarocque
+    1. <a href="https://dx.doi.org/10.1186/s13028-018-0358-8">Warnken T, Delarocque
     J, Schumacher S, Huber K, Feige K. Retrospective analysis of insulin
     responses to standard dosed oral glucose tests (OGTs) via naso-gastric
     tubing towards definition of an objective cut-off value. Acta Veterinaria
     Scandinavica 2018;60. doi:10.1186/s13028-018-0358-8.</a><br>
-    4. <a href="http://dx.doi.org/10.1016/j.domaniend.2017.10.008">Meier AD, de Laat MA, Reiche DB, Pollitt CC, Walsh DM, McGree JM, et al. The oral glucose test predicts laminitis risk in ponies fed a diet high in nonstructural carbohydrates. Domestic Animal Endocrinology 2018;63:1–9. doi:10.1016/j.domaniend.2017.10.008.</a>
+    2. <a href="https://dx.doi.org/10.1111/jvim.16621">de Laat MA, Warnken T, Delarocque J,
+    Reiche DB, Grob AJ, Feige K, et al. Carbohydrate pellets to assess insulin dysregulation
+    in horses. Veterinary Internal Medicne 2022;37:302–14. doi:10.1111/jvim.16621.</a><br>
+    3. <a href="https://sites.tufts.edu/equineendogroup/">Equine Endocrinology Group,
+    <i>Recommendations for the Diagnosis and Treatment of Equine Metabolic Syndrome (EMS)</i>,
+    2020, accessed August 2021.</a><br>
+    4. <a href="https://dx.doi.org/10.2746/042516408x342975">Carter RA, Treiber KH, Geor RJ, Douglass L, Harris PA.
+    Prediction of incipient pasture‐associated laminitis from hyperinsulinaemia, hyperleptinaemia and generalised
+    and localised obesity in a cohort of ponies. Equine Veterinary Journal 2009;41:171–8. doi:10.2746/042516408x342975.</a><br>
+    5. <a href="https://dx.doi.org/10.1186/s12917-021-02781-5">Lindåse S, Nostell K, Bergsten P,
+    Forslund A, Bröjer J. Evaluation of fasting plasma insulin and proxy measurements to assess
+    insulin sensitivity in horses. BMC Vet Res 2021;17. doi:10.1186/s12917-021-02781-5.</a><br>
     </figcaption>
   </figure>
   <p>
-    It is also interesting to note that the lines connecting the converted
-    values to the original cut-offs cross at some point, indicating that
-    <strong>the conversion of insulin measurements is not merely proportional to an
+    The <strong>conversion of insulin measurements is not strictly proportional to an
     assay-specific coefficient</strong>. The interaction between assays and
     insulin ought to be investigated using recombinant equine insulin or
     standardised pooled samples available to all laboratories.
@@ -153,7 +160,7 @@
     inspected to preclude overfitting. The obtained functions were transformed to
     polynomials and embedded in the present app. The intervals given on the right
     hand side before any conversion are the ranges for which data is available in
-    the app. After conversion prediction intervals are given instead. They
+    the app. After conversion, prediction intervals are given instead. They
     describe the uncertainty around the conversion which depends on the amount
     of available data and concordance of the assay pairs.
   </p>
@@ -218,13 +225,15 @@
     <li><a href="https://www.researchgate.net/profile/Julien_Delarocque">Julien
     Delarocque</a> from the <a href="https://www.tiho-hannover.de/pferde">University of Veterinary Medicine Hannover, Foundation</a></li>
     <li><a href="https://www.researchgate.net/profile/Tobias-Warnken">Tobias Warnken</a> from the <a href="https://www.tiho-hannover.de/pferde">University of Veterinary Medicine Hannover, Foundation</a></li>
+    <li><a href="https://www.researchgate.net/profile/Kerstin-Fey">Kerstin Fey</a> from the <a href="https://www.uni-giessen.de/de/fbz/fb10/institute_klinikum/klinikum/klinik-fur-pferde/pferdeklinik_innere/Klinik">Justus-Liebig-University of Giessen</a></li>
     <li><a href="https://scholar.google.co.uk/citations?user=jAvOEugAAAAJ&hl=en&oi=ao">Harry Carslake</a> from the <a href="https://www.liverpool.ac.uk/veterinary-science/about-us/equine-clinical-science/">University of Liverpool</a></li>
     <li><a href="https://liphookequinehospital.co.uk/the-team/hospital-and-referrals/equine-hospital-vets/professor-andy-durham/">Andy Durham</a> from <a href="https://liphookequinehospital.co.uk/">Liphook Equine Hospital</a></li>
     <li><a href="https://elib.tiho-hannover.de/servlets/solr/select?q=%2Bmods.author%3Afeige%2C+%2Bmods.author%3Akarsten+%2Bstate%3A%22published%22+%2BobjectType%3A%22mods%22&fl=*&sort=mods.dateIssued+desc&rows=20&version=4.5&mask=content%2Fsearch%2Fcomplex.xed">Karsten Feige</a> from <a href="https://www.tiho-hannover.de/pferde">University of Veterinary Medicine Hannover, Foundation</a></li>
   </ul>
   <div style="margin-top: 20px; text-align:center">
     <a href="https://www.tiho-hannover.de/pferde"><img src="/images/tiho.png" style="height: 100px; display: inline; margin: 5px 20px 5px 0"></a>
-    <a href="https://www.liverpool.ac.uk/veterinary-science/about-us/equine-clinical-science/"><img src="/images/liverpool.svg" style="height: 80px; display: inline; margin: 15px 20px 15px 20px"></a>
+    <a href="https://www.uni-giessen.de/de/fbz/fb10/institute_klinikum/klinikum/klinik-fur-pferde/pferdeklinik_innere/Klinik"><img src="/images/giessen.jpg" style="height: 80px; display: inline; margin: 15px 20px"></a>
+    <a href="https://www.liverpool.ac.uk/veterinary-science/about-us/equine-clinical-science/"><img src="/images/liverpool.svg" style="height: 80px; display: inline; margin: 15px 20px"></a>
     <a href="https://liphookequinehospital.co.uk/"><img src="/images/liphook.jpg" style="height: 90px; display: inline; margin: 10px 0 10px 20px"></a>
   </div>
 </section>
